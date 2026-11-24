@@ -3,141 +3,174 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Maja Kovačević – projekti</title>
-<meta name="description" content="Projekti iz područja uredskog poslovanja, evidencija i financija – Excel i Word.">
+<title>Maja Kovačević · projekti</title>
+<meta name="description" content="Moji projekti iz uredskog poslovanja: urudžbeni zapisnik, dopisi, evidencije, blagajna i e-računi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--navy:#1f3864;--ink:#1d1d1f;--muted:#5f6368;--line:#e3e6ea;--bg:#f6f7f9;--card:#fff;--accent:#dbe7f6}
+  :root{
+    --paper:#faf7f1; --ink:#2a2724; --soft:#6d665e; --line:#e6dfd3;
+    --accent:#2f5d50; --accent-soft:#e3ece7; --warm:#b8643f;
+  }
   *{box-sizing:border-box}
-  body{margin:0;font-family:"Segoe UI",Calibri,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
-  header{background:var(--navy);color:#fff;padding:48px 16px 40px}
-  .wrap{max-width:980px;margin:0 auto;padding:0 16px}
-  header h1{margin:0 0 6px;font-size:2rem;font-weight:600}
-  header p{margin:0;opacity:.85;max-width:680px}
-  main{padding:32px 0 48px}
-  .intro{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:28px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column}
-  .num{font-size:.8rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
-  .card h2{font-size:1.15rem;margin:4px 0 6px;color:var(--navy)}
-  .tools{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
-  .tools span{background:var(--accent);color:var(--navy);font-size:.78rem;padding:2px 8px;border-radius:20px}
-  .card ul{margin:0 0 14px;padding-left:18px;color:#333;font-size:.94rem}
-  .links{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
-  .links a{font-size:.88rem;text-decoration:none;border:1px solid var(--navy);color:var(--navy);padding:6px 10px;border-radius:6px}
-  .links a.primary{background:var(--navy);color:#fff}
-  .links a:hover{opacity:.85}
-  footer{color:var(--muted);font-size:.85rem;text-align:center;padding:0 16px 32px}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 "Public Sans",system-ui,sans-serif}
+  a{color:var(--accent)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+  nav .me{font-family:"Newsreader",serif;font-size:1.25rem;font-weight:600;text-decoration:none;color:var(--ink)}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;font-size:.95rem}
+  nav ul a{color:var(--soft);text-decoration:none}
+  nav ul a:hover{color:var(--ink)}
+
+  .hero{padding:70px 0 80px;border-bottom:1px solid var(--line)}
+  .hero h1{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.08;margin:0 0 26px;max-width:15ch;letter-spacing:-.01em}
+  .hero h1 em{color:var(--warm);font-style:italic}
+  .hero p{max-width:600px;color:var(--soft);font-size:1.1rem;margin:0}
+
+  .section-title{display:flex;align-items:baseline;gap:16px;margin:84px 0 34px}
+  .section-title h2{font-family:"Newsreader",serif;font-weight:500;font-size:2rem;margin:0}
+  .section-title span{color:var(--soft);font-size:.95rem}
+
+  .project{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;padding:42px 0;border-top:1px solid var(--line)}
+  .project:nth-child(even) .shot{order:2}
+  .shot{display:block;border-radius:6px;overflow:hidden;background:#fff;border:1px solid var(--line);
+        box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(60,45,30,.35);aspect-ratio:16/10;transition:transform .25s}
+  .shot:hover{transform:translateY(-3px)}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+  .num{font-family:"Newsreader",serif;color:var(--warm);font-size:1.05rem;font-style:italic}
+  .project h3{font-family:"Newsreader",serif;font-weight:500;font-size:1.65rem;line-height:1.2;margin:4px 0 14px}
+  .project p{margin:0 0 14px}
+  .used{font-size:.88rem;color:var(--soft);margin-bottom:18px}
+  .used b{font-weight:600;color:var(--ink)}
+  .links{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.95rem;font-weight:500}
+  .links a{text-decoration:none;border-bottom:1.5px solid var(--accent-soft);padding-bottom:1px}
+  .links a:hover{border-color:var(--accent)}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding-bottom:20px}
+  .about p{margin:0 0 16px}
+  .facts{border-left:2px solid var(--accent-soft);padding-left:24px}
+  .facts dt{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);margin-top:18px}
+  .facts dt:first-child{margin-top:0}
+  .facts dd{margin:2px 0 0}
+
+  footer{margin-top:90px;border-top:1px solid var(--line);padding:28px 0 40px;font-size:.88rem;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media (max-width:800px){
+    body{font-size:16px}
+    nav ul{gap:16px}
+    .hero{padding:40px 0 56px}
+    .project{grid-template-columns:1fr;gap:22px;padding:32px 0}
+    .project:nth-child(even) .shot{order:0}
+    .about{grid-template-columns:1fr;gap:28px}
+    .section-title{margin:60px 0 20px;flex-direction:column;gap:2px}
+  }
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <h1>Maja Kovačević</h1>
-    <p>Stručna prvostupnica poslovne informatike (FTRR Požega, Sveučilište J. J. Strossmayera u Osijeku). Projekti iz uredskog poslovanja, vođenja evidencija i financijske administracije.</p>
-  </div>
-</header>
-<main class="wrap">
-  <div class="intro">
-    Svaki projekt može se preuzeti u izvornom obliku (Excel / Word) ili pregledati kao PDF. Sve tablice rade s formulama, provjerama unosa i uvjetnim oblikovanjem. <strong>Svi podaci u primjerima su izmišljeni</strong> (fiktivna „Javna ustanova Primjer”).
-  </div>
-  <div class="grid">
+<div class="wrap">
+  <nav>
+    <a class="me" href="#">Maja Kovačević</a>
+    <ul><li><a href="#projekti">Projekti</a></li><li><a href="#o-meni">O meni</a></li></ul>
+  </nav>
 
-    <article class="card">
-      <div class="num">Projekt 1</div>
-      <h2>Elektronički urudžbeni zapisnik i evidencija pošte</h2>
-      <div class="tools"><span>Microsoft Excel</span><span>Uredsko poslovanje</span></div>
-      <ul>
-        <li>evidencija ulaznih i izlaznih akata s automatskom KLASOM i URBROJEM</li>
-        <li>praćenje rokova i statusa predmeta (u roku / ističe / prekoračen)</li>
-        <li>filtriranje po pošiljatelju, datumu i ustrojstvenoj jedinici, pregled s grafikonom</li>
-        <li>dostavnice, povratnice i oznake za pismohranu</li>
-      </ul>
-      <div class="links">
-        <a class="primary" href="01-urudzbeni-zapisnik/Urudzbeni_zapisnik_pregled.pdf">Pregled (PDF)</a>
-        <a href="01-urudzbeni-zapisnik/Urudzbeni_zapisnik.xlsx">Preuzmi Excel</a>
+  <header class="hero">
+    <h1>Volim kad je u papirima <em>red</em>.</h1>
+    <p>Završila sam poslovnu informatiku u Požegi i živim u Varaždinu. Ovdje skupljam projekte na kojima vježbam administrativne poslove: od urudžbenog zapisnika i službenih dopisa do blagajne i ulaznih računa.</p>
+  </header>
+
+  <div class="section-title" id="projekti"><h2>Projekti</h2><span>2026. · Excel i Word</span></div>
+
+  <section class="list">
+
+    <article class="project">
+      <a class="shot" href="01-urudzbeni-zapisnik/Urudzbeni_zapisnik_pregled.pdf"><img src="img/p1.png" alt="Urudžbeni zapisnik u Excelu" loading="lazy"></a>
+      <div>
+        <div class="num">01</div>
+        <h3>Urudžbeni zapisnik i evidencija pošte</h3>
+        <p>Tablica u koju se upisuje sva ulazna i izlazna pošta. KLASA i URBROJ se slože sami, a za svaki predmet se vidi tko ga rješava i je li rok još otvoren. Kad rok istječe, red pocrveni.</p>
+        <div class="used"><b>Excel:</b> padajući izbornici, COUNTIF, INDEX/MATCH, uvjetno oblikovanje, grafikon</div>
+        <div class="links"><a href="01-urudzbeni-zapisnik/Urudzbeni_zapisnik_pregled.pdf">Pogledaj PDF</a><a href="01-urudzbeni-zapisnik/Urudzbeni_zapisnik.xlsx">Preuzmi .xlsx</a></div>
       </div>
     </article>
 
-    <article class="card">
-      <div class="num">Projekt 2</div>
-      <h2>Predlošci službenih dopisa i obrazaca</h2>
-      <div class="tools"><span>Microsoft Word</span><span>Spajanje pošte</span><span>GDPR</span></div>
-      <ul>
-        <li>službeni dopis, zapisnik, obavijest, potvrda o zaposlenju</li>
-        <li>obrazac privole za obradu osobnih podataka (GDPR)</li>
-        <li>skupni personalizirani dopisi – spajanje pošte s Excel tablicom</li>
-      </ul>
-      <div class="links">
-        <a class="primary" href="02-predlosci-dopisa/Predlosci_sluzbenih_dopisa.pdf">Predlošci (PDF)</a>
-        <a href="02-predlosci-dopisa/Poziv_na_provjeru_znanja_spojeno.pdf">Spojeni dopisi (PDF)</a>
-        <a href="02-predlosci-dopisa/Predlosci_sluzbenih_dopisa.docx">Word</a>
-        <a href="02-predlosci-dopisa/Poziv_na_provjeru_znanja_glavni_dokument.docx">Glavni dokument</a>
-        <a href="02-predlosci-dopisa/Popis_kandidata.xlsx">Popis (Excel)</a>
+    <article class="project">
+      <a class="shot" href="02-predlosci-dopisa/Predlosci_sluzbenih_dopisa.pdf"><img src="img/p2.png" alt="Predložak službenog dopisa" loading="lazy"></a>
+      <div>
+        <div class="num">02</div>
+        <h3>Predlošci službenih dopisa</h3>
+        <p>Pet predložaka koje sam složila po pravilima službenog dopisivanja: dopis, zapisnik, obavijest, potvrda o zaposlenju i privola za obradu osobnih podataka. Uz to i primjer spajanja pošte, gdje se iz jedne Excel tablice napravi poziv za svakog kandidata posebno.</p>
+        <div class="used"><b>Word:</b> predlošci, spajanje pošte s Excelom</div>
+        <div class="links"><a href="02-predlosci-dopisa/Predlosci_sluzbenih_dopisa.pdf">Predlošci (PDF)</a><a href="02-predlosci-dopisa/Poziv_na_provjeru_znanja_spojeno.pdf">Spojeni pozivi (PDF)</a><a href="02-predlosci-dopisa/Predlosci_sluzbenih_dopisa.docx">.docx</a></div>
       </div>
     </article>
 
-    <article class="card">
-      <div class="num">Projekt 3</div>
-      <h2>Evidencija radnog vremena i godišnjih odmora</h2>
-      <div class="tools"><span>Microsoft Excel</span><span>Kadrovska evidencija</span></div>
-      <ul>
-        <li>mjesečna evidencija prisutnosti, bolovanja, blagdana i prekovremenih sati</li>
-        <li>automatski zbrojevi sati i upozorenje na nepotpune unose</li>
-        <li>plan i praćenje korištenja godišnjih odmora</li>
-      </ul>
-      <div class="links">
-        <a class="primary" href="03-evidencija-radnog-vremena/Evidencija_radnog_vremena_i_GO_pregled.pdf">Pregled (PDF)</a>
-        <a href="03-evidencija-radnog-vremena/Evidencija_radnog_vremena_i_GO.xlsx">Preuzmi Excel</a>
+    <article class="project">
+      <a class="shot" href="03-evidencija-radnog-vremena/Evidencija_radnog_vremena_i_GO_pregled.pdf"><img src="img/p3.png" alt="Evidencija radnog vremena" loading="lazy"></a>
+      <div>
+        <div class="num">03</div>
+        <h3>Evidencija radnog vremena i godišnjih</h3>
+        <p>Mjesečna evidencija za osam djelatnika. Za svaki dan se upiše šifra (rad, godišnji, bolovanje, blagdan), a tablica sama zbroji sate i upozori ako je neki radni dan ostao prazan. Na drugom listu je plan godišnjih odmora i koliko kome dana ostaje.</p>
+        <div class="used"><b>Excel:</b> COUNTIF, SUMPRODUCT, WEEKDAY, provjera unosa</div>
+        <div class="links"><a href="03-evidencija-radnog-vremena/Evidencija_radnog_vremena_i_GO_pregled.pdf">Pogledaj PDF</a><a href="03-evidencija-radnog-vremena/Evidencija_radnog_vremena_i_GO.xlsx">Preuzmi .xlsx</a></div>
       </div>
     </article>
 
-    <article class="card">
-      <div class="num">Projekt 4</div>
-      <h2>Simulacija blagajničkog poslovanja</h2>
-      <div class="tools"><span>Microsoft Excel</span><span>HUB-3A</span><span>IBAN MOD 97</span></div>
-      <ul>
-        <li>blagajnički dnevnik s uplatnicama, isplatnicama i saldom</li>
-        <li>dnevni obračun i prebrojavanje gotovine po apoenima</li>
-        <li>kontrola naloga za plaćanje: IBAN, model, poziv na broj, iznos</li>
-      </ul>
-      <div class="links">
-        <a class="primary" href="04-blagajnicko-poslovanje/Blagajnicko_poslovanje_i_HUB-3A_pregled.pdf">Pregled (PDF)</a>
-        <a href="04-blagajnicko-poslovanje/Blagajnicko_poslovanje_i_HUB-3A.xlsx">Preuzmi Excel</a>
+    <article class="project">
+      <a class="shot" href="04-blagajnicko-poslovanje/Blagajnicko_poslovanje_i_HUB-3A_pregled.pdf"><img src="img/p4.png" alt="Kontrola naloga za plaćanje" loading="lazy"></a>
+      <div>
+        <div class="num">04</div>
+        <h3>Blagajna i kontrola naloga za plaćanje</h3>
+        <p>Blagajnički dnevnik s uplatnicama i isplatnicama, dnevni obračun s prebrojavanjem novčanica i kovanica te provjera naloga prije slanja u banku. Tablica prepozna krivi IBAN preko kontrolnog broja, kao i krivi model ili prazan poziv na broj.</p>
+        <div class="used"><b>Excel:</b> tekstualne funkcije, MOD 97 provjera IBAN-a, obrazac za ispis</div>
+        <div class="links"><a href="04-blagajnicko-poslovanje/Blagajnicko_poslovanje_i_HUB-3A_pregled.pdf">Pogledaj PDF</a><a href="04-blagajnicko-poslovanje/Blagajnicko_poslovanje_i_HUB-3A.xlsx">Preuzmi .xlsx</a></div>
       </div>
     </article>
 
-    <article class="card">
-      <div class="num">Projekt 5</div>
-      <h2>Obrada ulaznih e-računa uz AI alate</h2>
-      <div class="tools"><span>Excel / Google Sheets</span><span>ChatGPT</span><span>Fiskalizacija 2.0</span></div>
-      <ul>
-        <li>knjiga ulaznih e-računa s provjerom OIB-a (ISO 7064)</li>
-        <li>izdvajanje podataka s računa uz AI i kontrola iznosa formulama</li>
-        <li>praćenje dospijeća i usklađivanje s izvodom banke</li>
-      </ul>
-      <div class="links">
-        <a class="primary" href="05-e-racuni/Obrada_ulaznih_e-racuna_pregled.pdf">Pregled (PDF)</a>
-        <a href="05-e-racuni/Obrada_ulaznih_e-racuna.xlsx">Preuzmi Excel</a>
+    <article class="project">
+      <a class="shot" href="05-e-racuni/Obrada_ulaznih_e-racuna_pregled.pdf"><img src="img/p5.png" alt="Knjiga ulaznih e-računa" loading="lazy"></a>
+      <div>
+        <div class="num">05</div>
+        <h3>Ulazni e-računi uz pomoć ChatGPT-a</h3>
+        <p>Podatke s računa izvučem uz ChatGPT, ali ih tablica onda provjeri: je li OIB ispravan, slaže li se PDV s iznosom i kada račun dospijeva. Plaćanja se upisuju s izvoda banke i račun se sam označi kao plaćen.</p>
+        <div class="used"><b>Excel + ChatGPT:</b> provjera OIB-a, usklađivanje s izvodom</div>
+        <div class="links"><a href="05-e-racuni/Obrada_ulaznih_e-racuna_pregled.pdf">Pogledaj PDF</a><a href="05-e-racuni/Obrada_ulaznih_e-racuna.xlsx">Preuzmi .xlsx</a></div>
       </div>
     </article>
 
-    <article class="card">
-      <div class="num">Projekt 6</div>
-      <h2>Vodič kroz e-usluge za građane</h2>
-      <div class="tools"><span>Microsoft Word</span><span>e-Građani</span></div>
-      <ul>
-        <li>prijava u e-Građane i vjerodajnice (NIAS) korak po korak</li>
-        <li>najčešće e-usluge: HZMO zapis, domovnica, izvodi, Portal zdravlja</li>
-        <li>provjera e-dokumenata, sigurnost i rješavanje čestih problema</li>
-      </ul>
-      <div class="links">
-        <a class="primary" href="06-vodic-e-usluge/Vodic_kroz_e-usluge_za_gradane.pdf">Vodič (PDF)</a>
-        <a href="06-vodic-e-usluge/Vodic_kroz_e-usluge_za_gradane.docx">Word</a>
+    <article class="project">
+      <a class="shot" href="06-vodic-e-usluge/Vodic_kroz_e-usluge_za_gradane.pdf"><img src="img/p6.png" alt="Vodič kroz e-usluge" loading="lazy"></a>
+      <div>
+        <div class="num">06</div>
+        <h3>Vodič kroz e-Građane</h3>
+        <p>Kratke upute za ljude koji se teško snalaze u e-Građanima: kako se prijaviti, gdje se traži HZMO zapis ili domovnica, kako provjeriti dokument i na što paziti. Napisane jednostavno, tako da se mogu dati nekome na šalteru.</p>
+        <div class="used"><b>Word</b></div>
+        <div class="links"><a href="06-vodic-e-usluge/Vodic_kroz_e-usluge_za_gradane.pdf">Pročitaj vodič (PDF)</a><a href="06-vodic-e-usluge/Vodic_kroz_e-usluge_za_gradane.docx">.docx</a></div>
       </div>
     </article>
 
-  </div>
-</main>
-<footer>© 2026. Maja Kovačević · samostalni projekti</footer>
+  </section>
+
+  <div class="section-title" id="o-meni"><h2>O meni</h2></div>
+  <section class="about">
+    <div>
+      <p>Prvostupnica sam poslovne informatike, a prije toga sam završila Ekonomsku školu u Požegi. Na studiju sam radila s tablicama, bazama podataka i webom. Završni rad sam pisala o elektroničkim plaćanjima.</p>
+      <p>Ljeta sam provodila radeći s ljudima, na recepciji i na blagajni aquaparka. Tamo sam naučila biti strpljiva i pažljiva s novcem i dokumentima.</p>
+    </div>
+    <dl class="facts">
+      <dt>Obrazovanje</dt><dd>Fakultet turizma i ruralnog razvoja u Požegi, 2026.</dd>
+      <dt>Jezici</dt><dd>hrvatski, engleski (B2)</dd>
+      <dt>Alati</dt><dd>Word, Excel, Google tablice, ChatGPT, WordPress</dd>
+      <dt>Grad</dt><dd>Varaždin</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <span>Maja Kovačević, 2026.</span>
+    <span>Imena, tvrtke, OIB-i i IBAN-i u primjerima su izmišljeni.</span>
+  </footer>
+</div>
 </body>
 </html>
