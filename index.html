@@ -25,7 +25,11 @@
   nav ul a{color:var(--soft);text-decoration:none}
   nav ul a:hover{color:var(--ink)}
 
-  .hero{padding:70px 0 80px;border-bottom:1px solid var(--line)}
+  .hero{padding:56px 0 72px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 290px;gap:64px;align-items:center}
+  .portrait{margin:0;position:relative}
+  .portrait::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1.5px solid var(--warm);border-radius:8px;opacity:.55}
+  .portrait img{position:relative;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:8px;background:#fff;
+                box-shadow:0 20px 44px -26px rgba(60,45,30,.45)}
   .hero h1{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.08;margin:0 0 26px;max-width:15ch;letter-spacing:-.01em}
   .hero h1 em{color:var(--warm);font-style:italic}
   .hero p{max-width:600px;color:var(--soft);font-size:1.1rem;margin:0}
@@ -61,7 +65,8 @@
   @media (max-width:800px){
     body{font-size:16px}
     nav ul{gap:16px}
-    .hero{padding:40px 0 56px}
+    .hero{padding:24px 0 56px;grid-template-columns:1fr;gap:36px}
+    .portrait{order:-1;width:190px}
     .project{grid-template-columns:1fr;gap:22px;padding:32px 0}
     .project:nth-child(even) .shot{order:0}
     .about{grid-template-columns:1fr;gap:28px}
@@ -77,8 +82,11 @@
   </nav>
 
   <header class="hero">
+    <div>
     <h1>Volim kad je u papirima <em>red</em>.</h1>
     <p>Završila sam poslovnu informatiku u Požegi i živim u Varaždinu. Ovdje skupljam projekte na kojima vježbam administrativne poslove: od urudžbenog zapisnika i službenih dopisa do blagajne i ulaznih računa.</p>
+    </div>
+    <figure class="portrait"><img src="img/maja.jpg" alt="Maja Kovačević" width="560" height="699"></figure>
   </header>
 
   <div class="section-title" id="projekti"><h2>Projekti</h2><span>2026. · Excel i Word</span></div>
