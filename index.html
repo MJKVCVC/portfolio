@@ -84,6 +84,8 @@
         display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
   .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
   .card.wide{grid-column:span 3}
+  .card.full{grid-column:1/-1}
+  .card.full .thumb{aspect-ratio:21/7}
   .thumb{display:block;aspect-ratio:16/10;background:#f1f4f2;overflow:hidden;border-bottom:1px solid var(--line);position:relative}
   .thumb img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .4s}
   .card:hover .thumb img{transform:scale(1.03)}
@@ -139,6 +141,7 @@
     .hero .wrap{grid-template-columns:1fr;gap:32px}
     .photo{max-width:420px;width:100%;margin:0 auto;order:-1}
     .grid{grid-template-columns:1fr}
+    .card.full .thumb{aspect-ratio:16/10}
     .about{grid-template-columns:1fr}
     section{padding:52px 0}
     .cv{padding:30px 24px}
@@ -248,8 +251,8 @@
           </div>
         </article>
 
-        <article class="card wide reveal" style="grid-column:span 6">
-          <a class="thumb" href="06-vodic-e-usluge/Vodic_kroz_e-usluge_za_gradane.pdf" style="aspect-ratio:21/7"><span class="tag">Word</span><img src="img/p6.png" alt="Vodič kroz e-usluge" loading="lazy"></a>
+        <article class="card full reveal">
+          <a class="thumb" href="06-vodic-e-usluge/Vodic_kroz_e-usluge_za_gradane.pdf"><span class="tag">Word</span><img src="img/p6.png" alt="Vodič kroz e-usluge" loading="lazy"></a>
           <div class="body">
             <h3>Vodič kroz e-Građane</h3>
             <p>Jednostavne upute za prijavu u e-Građane, najčešće e-usluge i provjeru e-dokumenata, za stranke koje se teže snalaze.</p>
